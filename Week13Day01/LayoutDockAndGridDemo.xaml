@@ -1,0 +1,40 @@
+﻿<Window x:Class="Week13Day01.LayoutDockAndGridDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week13Day01"
+        mc:Ignorable="d"
+        Title="Layout Dock &amp; Grid Demo" Height="450" Width="800">
+    <DockPanel>
+        <Image DockPanel.Dock="Left" Source="/resources/panda.jfif"></Image>
+        <Label DockPanel.Dock="Top" Background="#FF7EC8E0" Foreground="#FFEB2424" FontSize="22">Enter your personal details</Label>
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5,5,5" >
+            <Button Background="#FF95A7C8" Foreground="#FFF4F3F3" Width="100" Margin="10,0,10,0" FontSize="20">Back</Button>
+            <Button Background="#FF95A7C8" Foreground="#FFF4F3F3" Width="100" Margin="10,0,10,0" FontSize="20">Save</Button>
+            <Button Background="#FF95A7C8" Foreground="#FFF4F3F3" Width="100" Margin="10,0,10,0" FontSize="20">Cancel</Button>
+        </StackPanel>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="E-Mail:"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Comment:"/>
+
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="3" Height="30" />
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Height="30" />
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="3" />
+        </Grid>
+    </DockPanel>
+</Window>
